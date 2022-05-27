@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic effect1</title>
+    <style>
+        /*背景*/
+        .bgImg{
+            width: 400px;
+            height: 360px;
+            border: 1px solid green;
+            background-image: url("image/background.jpg");
+            position: relative;
+        }
+
+        /*白框*/
+        .bgImg:before{
+            content: "";
+            width: 300px;
+            height: 150px;
+            border:8px solid white;
+            position: absolute;
+            left: 50%;
+            /*margin-left: -158px;*/
+            /*margin-top: 40px;*/
+            margin: 40px 0 0 -158px;
+            transition: all .3s;
+        }
+        /*文字标题*/
+        .title{
+            /*margin: 40px 0 0 80px;*/
+            color: white;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        /*鼠标移入后显示的文字*/
+        .bgImg:after{
+            content: "this is single dog!this is single dog!this is single dog!this is single dog!";
+            position: absolute;
+            width: 300px;
+            height: 150px;
+            color: white;
+            text-align: center;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: 120px;
+            opacity: 0;
+            transition: all .3s;
+        }
+        /*移入效果*/
+        /*移入父元素白框下移*/
+        .bgImg:hover:before{
+            margin-top: 160px;
+        }
+        /*移入父元素文字显示并且下移*/
+        .bgImg:hover:after{
+            margin-top: 160px;
+            opacity: 1;
+        }
+        /*移入父元素背景图明暗度变化*/
+        .bgImg:hover{
+            filter: brightness(80%);
+            background-position: 1px 0;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="bgImg" >
+        <div class="title">STRANGE DEXTER</div>
+    </div>
+</section>
+</body>
+</html>

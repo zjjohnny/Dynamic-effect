@@ -1,0 +1,49 @@
+/*背景*/
+.bgImg{
+    width: 400px;
+    height: 360px;
+    border: 1px solid green;
+    background-image: url("image/lanrenzhijia2.jpg");
+    position: relative;
+}
+/*文字标题*/
+.title{
+    margin: 40px 0 0 125px;
+    color: #5D5A62;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 170px;
+    position: absolute;
+    /* opacity: 0; */
+    transition: all .3s;
+}
+.bgImg:after{
+    content: "SADIE NEVER TOOK HER EYES OFF ME.SHE HAD A DARK SOUL.";
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    color: white;
+    text-align: center;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: 300px;
+    opacity: 0;
+    transition: all .3s;
+}
+/*移入父元素文字显示并且下移*/
+.bgImg:hover:after{
+    margin-top: 280px;
+    opacity: 1;
+    transform: translate3d(0,-20%,0);
+}
+.bgImg:hover .title{
+    margin-top: 140px;
+    opacity: 1;
+    color: white;
+
+}
+/*移入父元素背景图明暗度变化*/
+.bgImg:hover{
+    filter: brightness(80%);
+    background-position: 1px 0;
+}
